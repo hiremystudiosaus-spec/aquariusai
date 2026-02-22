@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Models } from "@/components/Models";
 import { Footer } from "@/components/Footer";
 import { Pricing } from "@/components/Pricing";
+import { Benefits } from "@/components/Benefits";
 
 export default function Home() {
   return (
@@ -73,6 +74,7 @@ export default function Home() {
       </section>
 
       <Pricing />
+      <Benefits />
 
       <Footer />
     </main>
