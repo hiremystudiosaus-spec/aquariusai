@@ -1,65 +1,77 @@
-import Image from "next/image";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { Models } from "@/components/Models";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-black text-white selection:bg-accent-red selection:text-white">
+      <Navbar />
+      <Hero />
+      <Models />
+
+      {/* Featured Section / AI Chat Preview */}
+      <section className="py-24 px-6 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-red/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+          <div className="flex-1">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white leading-tight">
+              Empowering Industries with <span className="text-accent-red">Context-Aware</span> AI
+            </h2>
+            <p className="text-white/60 mb-8 leading-relaxed max-w-xl">
+              AquariusAI isn't just another general-purpose model. It's a suite of specialized intelligences that understand the nuances of finance, medicine, and education. Each model is built with security, accuracy, and industry standards at its core.
+            </p>
+            <div className="space-y-4">
+              {[
+                "Privacy-first data processing",
+                "Advanced reasoning and problem solving",
+                "Seamless API integration",
+                "Real-time industry insights"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center space-x-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent-red" />
+                  <span className="text-sm font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex-1 w-full relative">
+            {/* Animated Glow behind terminal */}
+            <div className="absolute inset-0 bg-accent-red/10 blur-3xl rounded-full" />
+
+            <div className="glass-red p-1 rounded-[32px] overflow-hidden relative z-10 shadow-2xl shadow-accent-red/10">
+              <div className="bg-black/80 rounded-[31px] p-6 h-[400px] flex flex-col border border-white/5">
+                <div className="flex items-center space-x-2 mb-6 border-b border-white/5 pb-4">
+                  <div className="flex space-x-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                  </div>
+                  <span className="ml-4 text-[10px] font-mono text-white/30 uppercase tracking-[0.2em]">AquariusAI Terminal v2.0.4</span>
+                </div>
+                <div className="flex-grow font-mono text-sm space-y-4 overflow-y-auto custom-scrollbar">
+                  <p className="text-white/40"><span className="text-accent-red/60">$</span> init_model --target=fintech</p>
+                  <p className="text-white/40"><span className="text-green-500/40">✓</span> Initialized FinTech Intelligence</p>
+                  <p className="text-white/40"><span className="text-blue-500/40">i</span> Loading regulatory compliance datasets...</p>
+                  <p className="text-white/80 mt-6 animate-pulse border-l-2 border-accent-red pl-4 py-1 bg-accent-red/5">
+                    AquariusAI: Model ready. How can I assist with your portfolio analysis today?
+                  </p>
+                  <div className="pt-4 space-y-2">
+                    <div className="p-3 glass rounded-xl border border-white/5 cursor-pointer hover:bg-white/5 transition-all text-xs text-white/60">
+                      Predict market volatility for Q3 2026 based on recent Fed data.
+                    </div>
+                    <div className="p-3 glass rounded-xl border border-white/5 cursor-pointer hover:bg-white/5 transition-all text-xs text-white/60">
+                      Generate a risk-assessment report for Emerging Markets.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <Footer />
+    </main>
   );
 }
