@@ -5,7 +5,7 @@
         "nodejs_compat"
     ],
     "assets": {
-        "directory": ".next"
+        "directory": "./out"
     },
     "observability": {
         "enabled": true
