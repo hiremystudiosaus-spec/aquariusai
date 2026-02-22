@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Models } from "@/components/Models";
 import { Footer } from "@/components/Footer";
+import { Pricing } from "@/components/Pricing";
 
 export default function Home() {
   return (
@@ -70,6 +71,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Pricing />
 
       <Footer />
     </main>
