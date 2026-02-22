@@ -1,0 +1,9 @@
+name = "aquariusai"
+compatibility_date = "2024-04-03"
+compatibility_flags = [ "nodejs_compat" ]
+
+[assets]
+directory = "./out"
+
+[observability]
+enabled = true
