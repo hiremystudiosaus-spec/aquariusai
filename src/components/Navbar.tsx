@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const Navbar = () => {
@@ -11,8 +12,9 @@ export const Navbar = () => {
             animate={{ y: 0, opacity: 1 }}
             className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 mx-auto mt-4 glass rounded-full max-w-7xl"
         >
-            <Link href="/" className="text-2xl font-bold tracking-tighter">
-                Aquarius<span className="text-accent-red">AI</span>
+            <Link href="/" className="flex items-center space-x-2 text-2xl font-bold tracking-tighter">
+                <Image src="/aquarius-logo.png" alt="AquariusAI Logo" width={32} height={32} className="w-8 h-8 object-contain" />
+                <span>Aquarius<span className="text-accent-red">AI</span></span>
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
