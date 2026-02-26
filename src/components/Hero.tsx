@@ -48,7 +48,7 @@ export const Hero = () => {
                         <div className="absolute inset-0 bg-gradient-to-br from-accent-red/10 via-transparent to-transparent opacity-50" />
 
                         <Image
-                            src="/237shots_so.png"
+                            src="/909shots_so.png"
                             alt="AquariusAI Dashboard Interface"
                             width={1600}
                             height={900}
